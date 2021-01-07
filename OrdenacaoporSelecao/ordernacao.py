@@ -20,8 +20,7 @@ class OrdenacaoSelecao:
         return novoArr
     
 
-
-lista = [2, 10, 1, 34, 21, 24, 0]
+lista = [2, 10, 1, 34]
 
 order = OrdenacaoSelecao()
 print(order.selecao(lista))
