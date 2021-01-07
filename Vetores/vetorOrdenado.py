@@ -39,7 +39,7 @@ class VetorOrdernado():
         self.ultima_posicao += 1
     
     # O(n)
-    def pesquisar(self, valor):
+    def pesquisa_linear(self, valor):
         for i in range(self.ultima_posicao + 1):
             if self.valores[i] > valor:
                 return -1 
@@ -48,6 +48,29 @@ class VetorOrdernado():
             if i == self.ultima_posicao:
                 return -1
 
+    # O(log n)
+    def pesquisa_binaria(self, valor):
+        limite_inferior = 0
+        limite_superior = self.ultima_posicao
+
+        while True:
+            posicao_atual = (limite_inferior + limite_superior) // 2
+            # se achou na primeira tentativa
+            if self.valores[posicao_atual] == valor:
+                return posicao_atual
+            # se nao achou
+            elif limite_inferior > limite_superior:
+                return -1 
+            # Divide os limites
+            else:
+                # Limite inferior
+                if self.valores[posicao_atual] < valor:
+                    limite_inferior = posicao_atual + 1
+                # Limite superior
+                else:
+                    limite_superior -= 1
+
+    # O(n)
     def excluir(self, valor):
         posicao = self.pesquisar(valor)
         if posicao == -1: 
@@ -62,7 +85,7 @@ class VetorOrdernado():
 if __name__ == "__main__":    
 
     vetor = VetorOrdernado(10)
-
+    '''
     vetor.insere(6)
     vetor.insere(4)    
     vetor.insere(3)
@@ -76,3 +99,20 @@ if __name__ == "__main__":
 
     vetor.excluir(5)
     vetor.excluir(9)
+    '''
+
+    vetor.insere(8)
+    vetor.insere(9)
+    vetor.insere(4)
+    vetor.insere(1)
+    vetor.insere(5)
+    vetor.insere(7)
+    vetor.insere(11)
+    vetor.insere(13)
+    vetor.insere(2)
+    vetor.imprime()
+
+    print(vetor.pesquisa_binaria(7))
+    print(vetor.pesquisa_binaria(5))
+    print(vetor.pesquisa_binaria(13))
+    print(vetor.pesquisa_binaria(20))
