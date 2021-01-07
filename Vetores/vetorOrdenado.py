@@ -72,7 +72,7 @@ class VetorOrdernado():
 
     # O(n)
     def excluir(self, valor):
-        posicao = self.pesquisar(valor)
+        posicao = self.pesquisa_linear(valor)
         if posicao == -1: 
             return -1 
         else:
