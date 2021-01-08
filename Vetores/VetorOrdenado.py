@@ -1,12 +1,12 @@
 
 
-class VetorOrdernado():
+class VetorOrdenado():
     '''Classe de vetores ordenados - Insira o tamanho do vetor ao instanciar a classe'''
     def __init__(self, capacidade):
         import numpy as np
         self.capacidade = capacidade 
         self.ultima_posicao = -1 
-        self.valores = np.empty(self.capacidade, dtype=int)
+        self.valores = np.empty(self.capacidade, dtype=float)
 
     # O(n)
     def imprime(self):
@@ -68,7 +68,7 @@ class VetorOrdernado():
                     limite_inferior = posicao_atual + 1
                 # Limite superior
                 else:
-                    limite_superior -= 1
+                    limite_superior = posicao_atual - 1
 
     # O(n)
     def excluir(self, valor):
@@ -84,7 +84,7 @@ class VetorOrdernado():
 
 if __name__ == "__main__":    
 
-    vetor = VetorOrdernado(10)
+    vetor = VetorOrdenado(10)
     '''
     vetor.insere(6)
     vetor.insere(4)    
@@ -101,6 +101,7 @@ if __name__ == "__main__":
     vetor.excluir(9)
     '''
 
+    
     vetor.insere(8)
     vetor.insere(9)
     vetor.insere(4)
@@ -116,3 +117,6 @@ if __name__ == "__main__":
     print(vetor.pesquisa_binaria(5))
     print(vetor.pesquisa_binaria(13))
     print(vetor.pesquisa_binaria(20))
+    
+
+   

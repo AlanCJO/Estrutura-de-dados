@@ -20,4 +20,4 @@ def pesquisa_binaria(lista, valor):
                 limite_inferior = posicao_atual + 1
             # Limite superior
             else:
-                limite_superior - 1
+                limite_superior = posicao_atual - 1
