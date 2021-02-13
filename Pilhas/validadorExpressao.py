@@ -50,7 +50,6 @@ class Pilha:
 # a[b{c}d}e}
 # a{b(c)
 
-
 expressao = input('Digite uma expressão: ')
 pilha = Pilha(len(expressao))
 
