@@ -25,4 +25,4 @@
         <li>Mostra o elemento que está no topo da pilha</li>
     </li>
     <li>Último-A-Entrar-Primeiro-A-Sair (LIFO - Last-In-First-Out)</li>
-</ul>
+</ul> 
